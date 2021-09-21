@@ -1,38 +1,27 @@
 from django.db import models
+from django.db.models.constraints import UniqueConstraint
 
-class Segmentos(models.Model):
-segmento = models.ForeignKeye(Eletrodomesticos, Cosmeticos, Informatica, Supermecado, Vestuario, on_delete=models.CASCADE)
+class Segmentos (models.Model):
+    segmento = models.CharField(max_length=150)
+    descricao_segmento = models.CharField(max_length=255)
 
-class Eletrodomesticos(models.Model):
-    eletro_marca = models.CharField(max_length=150)
-    eletro_produto = models.CharField(max_length=150)
-    eletro_descricao = models.TextField(blank=True, null=true)
-    eletro_voltagem = models.CharField(max_length=15)
-    eletro_preço = models.CharField(max_length=15) 
-    quantidade = models.IntegerField()
-    
-class Cosmeticos(models.Model):
-    cosm_marca = models.CharField(max_length=150)
-    cosm_produto = models.CharField(max_length=150)
-    cosm_descricao = models.TextField(blank=True, null=true)
-    cosm_preço = models.CharField(max_length=15)
-    
 
-class Informatica(models.Model):
-    inf_marca = models.CharField(max_length=150)
-    inf_produto = models.CharField(max_length=150)
-    inf_descricao = models.TextField(blank=True, null=true)
-    inf_preço = models.CharField(max_length=15)
+class Marcas (models.Model):
+    segmento_marca = models.ForeignKey(Segmentos, on_delete=models.CASCADE)
+    nome_empresa_marca = models.CharField(max_length=150)
+    cnpj = models.FloatField(UniqueConstraint)
 
-class Supermecado(models.Model):
-    marca = models.CharField(max_length=150)
+
+
+class Produtos (models.Model):
+    produto_marca_key = models.ForeignKey(Marcas, on_delete=models.CASCADE) 
+    segmento_produto_models = models.CharField(max_length=150)
     produto = models.CharField(max_length=150)
-    descricao = models.TextField(blank=True, null=True)
-    preço = models.CharField(max_length=15)
-
-class Vestuario(models.Model):
-    marca = models.CharField(max_length=150)
-    produto = models.CharField(max_length=150)
-    descricao = models.TextField(blank=True, null=true)
-    preço = models.CharField(max_length=15)
+    produto_nome = models.CharField(max_length=150)
+    produto_descricao = models.TextField(blank=True, null=True)
+    produto_voltagem = models.CharField(max_length=15)
+    produto_tamanho = models.CharField(max_length=15)
+    produto_preço = models.CharField(max_length=15) 
+    produto_quantidade = models.IntegerField()
+    produto_foto = models.FileField()
 

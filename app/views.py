@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from app.models import Segmentos
-from app.forms import Segmentos_form
+from django.shortcuts import redirect, render
+from app.models import Segmentos, Marcas, Produtos
+from app.forms import SegmentosForm, MarcasForm, ProdutosForm
 from django.http import HttpResponseRedirect
 
 '''
@@ -10,12 +10,23 @@ def home(request):
     return render(request, 'index.html')
 
 def form(request):
-    data = {'form':Segmentos_form()}
-    return render(request, 'form.html', data, create)
+    data = {'form': SegmentosForm()}
+    return render(request, 'form.html', data)
 
 def create(request):
-    form = Segmentos_form(request.POST or None)
+    form = SegmentosForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("./")
+        return HttpResponseRedirect("/")
 
+def create(request):
+    form = MarcasForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")
+
+def create(request):
+    form = ProdutosForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/")

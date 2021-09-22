@@ -16,6 +16,10 @@ def form(request):
 
 def create(request):
     form = SegmentosForm(request.POST or None)
+    form1 = MarcasForm(request.POST or None)
+    form2 = ProdutosForm(request.POST or None)
     if form.is_valid():
         form.save()
+        form1.save()
+        form2.save()
         return HttpResponseRedirect ("/")

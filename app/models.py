@@ -2,7 +2,7 @@ from django.db import models
 
 class Segmentos (models.Model):
     segmento = models.CharField(max_length=150)
-    descricao_segmento = models.CharField(max_length=255)
+    descricao_segmento = models.TextField(blank=True, null=True)
 
 
 class Marcas (models.Model):

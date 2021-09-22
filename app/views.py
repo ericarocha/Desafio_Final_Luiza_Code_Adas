@@ -19,15 +19,3 @@ def create(request):
     if form.is_valid():
         form.save()
         return HttpResponseRedirect ("/")
-
-def create(request):
-    form = MarcasForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    return HttpResponseRedirect ("/")
-
-def create(request):
-    form = ProdutosForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    return HttpResponseRedirect ("/")

@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.constraints import UniqueConstraint
 
 class Segmentos (models.Model):
     segmento = models.CharField(max_length=150)
@@ -9,7 +8,7 @@ class Segmentos (models.Model):
 class Marcas (models.Model):
     segmento_marca = models.ForeignKey(Segmentos, on_delete=models.CASCADE)
     nome_empresa_marca = models.CharField(max_length=150)
-    cnpj = models.FloatField(UniqueConstraint)
+    cnpj = models.FloatField()
 
 
 

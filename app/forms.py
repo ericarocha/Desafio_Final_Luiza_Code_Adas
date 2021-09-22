@@ -1,20 +1,21 @@
-from django.forms import ModelForm, fields
+from django.db import models
+from django.forms import ModelForm
 from app.models import Segmentos, Marcas, Produtos
 
 class SegmentosForm(ModelForm):
     class Meta:
-        model : Segmentos
-        fields = ['segmento', 'descricao_segmento']
+        model = Segmentos
+        fields = "__all__"
 
 class MarcasForm(ModelForm):
     class Meta:
-        model : Marcas
-        fields = ['segmento_marca', 'nome_empresa_marca', "cpnj"]
+        model = Marcas
+        fields = "__all__"
 
 class ProdutosForm(ModelForm):
     class Meta:
-        model : Produtos
-        fields = ["Produto_marca_key", "segmento_produto_models", "produto", "produto_nome", "produto_descricao","produto_voltagem", "produto_tamanho", "produto_preço", "produto_quantidade", "produto_foto"]
+        model = Produtos
+        fields = "__all__"
 
 
 

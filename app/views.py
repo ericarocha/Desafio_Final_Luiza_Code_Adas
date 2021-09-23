@@ -1,4 +1,4 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
+from django.http.response import HttpResponse, HttpResponseRedirect, ResponseHeaders
 from django.shortcuts import redirect, render
 from app.models import Segmentos, Marcas, Produtos
 from app.forms import SegmentosForm, MarcasForm, ProdutosForm
@@ -22,4 +22,9 @@ def create(request):
         form.save()
         form1.save()
         form2.save()
-        return HttpResponseRedirect ("/")
+        return HttpResponseRedirect("/")
+
+def view(request, pk):
+    data = {}
+    data = {'db', Segmentos.objects.get(pk=pk)}
+    return render(request, 'view.html, data')

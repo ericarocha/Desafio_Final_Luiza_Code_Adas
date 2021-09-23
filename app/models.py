@@ -2,8 +2,7 @@ from django.db import models
 
 class Segmentos (models.Model):
     segmento = models.CharField(max_length=150)
-    descricao_segmento = models.TextField(blank=True, null=True)git stat
-
+    descricao_segmento = models.TextField(blank=True, null=True)
 
 class Marcas (models.Model):
     segmento_marca = models.ForeignKey(Segmentos, on_delete=models.CASCADE)

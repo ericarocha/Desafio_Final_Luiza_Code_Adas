@@ -1,4 +1,4 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
+from django.http.response import HttpResponse, HttpResponseRedirect, ResponseHeaders
 from django.shortcuts import redirect, render
 from app.models import Segmentos, Empresas, Produtos
 from app.forms import SegmentosForm, EmpresasForm, ProdutosForm
@@ -9,7 +9,12 @@ from django.http import HttpResponseRedirect
 Funções para renderização do template
 '''
 def home(request):
-    return render(request, 'front.html')
+    data = {}
+    data ['db'] = Segmentos.objects.all()  
+    data ["dbe"] = Empresas.objects.all()
+    data ["dbp"] = Produtos.objects.all()
+    return render(request, 'front.html', data)
+    
 
 def form(request):
     data = {'form': SegmentosForm()}
@@ -22,7 +27,6 @@ def cd_empresa(request):
 def cd_produto(request):
     dataprod = {'cdproduto': ProdutosForm()}
     return render(request, 'cd_produto.html', dataprod)
-
 
 def create(request):
     form = SegmentosForm(request.POST or None)
@@ -42,3 +46,21 @@ def createprod(request):
         cd_produto.save()
     return HttpResponseRedirect ("/")
 
+def view(request, pk):
+  data = {}
+  data['db'] = Segmentos.objects.get(pk=pk) 
+  return render(request, 'view.html', data)
+
+def edit(request, pk):
+    data = {}
+    data['db'] = Segmentos.objects.get(pk=pk)
+    data['form'] = SegmentosForm(instance=data['db'])
+    return redirect(request, 'view.html', data)
+
+def update(request, pk):
+    data = {}
+    data['db'] = Segmentos.objects.get(pk=pk)
+    form = SegmentosForm(request.POST or None, instace=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')

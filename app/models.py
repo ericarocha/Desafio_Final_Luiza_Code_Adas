@@ -18,9 +18,9 @@ class Produtos (models.Model):
     descricao = models.TextField(blank=True, null=True)
     id_voltagem = models.ForeignKey(Voltagens, on_delete=models.CASCADE)
     tamanho = models.CharField(max_length=15)
-    preco = models.CharField(max_length=15) 
+    preço = models.CharField(max_length=15) 
     quantidade = models.IntegerField()
-    imagem = models.ImageField(upload_to = "imagens", blank=True, null=True)
+    # imagem = models.ImageField(upload_to = 'imagens', blank=True, null=True)
 
 
 

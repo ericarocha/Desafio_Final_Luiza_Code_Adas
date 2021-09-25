@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-    <form>
     <div class='col-8 m-auto pt-2 pb-2 text-center'>
         <h1>Cadastro Produtos</h1>
     </div>
@@ -28,13 +27,13 @@
             <div class="form-grupo mt-4">Descrição: {{ cdproduto.descricao }}</div>
             <div class="form-grupo mt-4">Voltagem: {{ cdproduto.id_voltagem }}</div>
             <div class="form-grupo mt-4">Tamanho: {{ cdproduto.tamanho }}</div>
-            <div class="form-grupo mt-4">Preço: {{ cdproduto.preco }}</div>
+            <div class="form-grupo mt-4">Preço: {{ cdproduto.preço }}</div>
             <div class="form-grupo mt-4">Quantidade: {{ cdproduto.quantidade }}</div>
-            <div class="form-grupo mt-4">Imagem: {{ cdproduto.imagem }}</div>
+           <!-- <div class="form-grupo mt-4">Imagem: {{ cdproduto.imagem }}</div>-->
+        
             
                 <input type="submit" class="submit-btn btn-sucess" value="Salvar">
         </form>    
-
     </div>
 </body>
 </html>

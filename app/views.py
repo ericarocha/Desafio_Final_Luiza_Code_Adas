@@ -8,10 +8,13 @@ from django.http import HttpResponseRedirect
 Funções para renderização do template
 '''
 def home(request):
-    return render(request, 'index.html')
+    data = {}
+    data['db'] = Segmentos.objects.all()
+    return render(request, 'index.html', data)
 
 def form(request):
-    data = {'form': SegmentosForm()}
+    data = {}
+    data['form'] = SegmentosForm, MarcasForm, ProdutosForm
     return render(request, 'form.html', data)
 
 def create(request):
@@ -22,9 +25,9 @@ def create(request):
         form.save()
         form1.save()
         form2.save()
-        return HttpResponseRedirect("/")
+        return redirect('home')
 
 def view(request, pk):
     data = {}
-    data = {'db', Segmentos.objects.get(pk=pk)}
-    return render(request, 'view.html, data')
+    data['db'] = Segmentos.objects.get(pk=pk)
+    return render(request, 'view.html', data)

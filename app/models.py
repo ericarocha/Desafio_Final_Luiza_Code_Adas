@@ -1,17 +1,11 @@
 from django.db import models
 
-class Segmentos (models.Model):
+class Empresas (models.Model):
     segmento = models.CharField(max_length=150)
     descricao_segmento = models.TextField(blank=True, null=True)
-
-class Marcas (models.Model):
     segmento_marca = models.ForeignKey(Segmentos, on_delete=models.CASCADE)
     nome_empresa_marca = models.CharField(max_length=150)
     cnpj = models.FloatField()
-
-
-
-class Produtos (models.Model):
     produto_marca_key = models.ForeignKey(Marcas, on_delete=models.CASCADE) 
     segmento_produto_models = models.CharField(max_length=150)
     produto = models.CharField(max_length=150)

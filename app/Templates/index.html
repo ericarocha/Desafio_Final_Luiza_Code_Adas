@@ -13,12 +13,12 @@
     </div>
 
     <div class='col-8 m-auto pt-4 pb-2 text-center'>
-      <a href="/form" class="btn btn-sucess">Adicionar</a>
+      <a href="/form" class="btn btn-success">Adicionar</a>
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
 <table class="table">
-  <thead class="table-info">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Marca</th>
@@ -37,7 +37,7 @@
   <tbody>
   {% for dbs in db %}
     <tr>
-      <th {{ dbs.id }}></th>
+      <th >{{dbs.id}}</th>
       <td>{{ dbs.produto_marca_key}}</td>
       <td>{{ dbs.segmento_produto_models}}</td>
       <td>{{ dbs.produto}}</td>
@@ -48,10 +48,9 @@
       <td>{{ dbs.produto_preço}}</td>
       <td>{{ dbs.produto_quantidade}}</td>
       <td>{{ dbs.produto_foto}}</td>
-      </td>
       <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-      <a href="/view/{{dbs.id}}" class="btn btn-primary">Editar</a>
-      <a href="/view/{{dbs.id}}" class="btn btn-danger">Deletar</a>
+      <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
+      <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
       </td>
 
     </tr>

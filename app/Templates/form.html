@@ -9,25 +9,26 @@
 <body>
 
         <div class='col-8 m-auto pt-2 pb-2 text-center'>
-            <h1>Cadastro</h1>
+            <h1>Cadastro Segmentos</h1>
         </div>
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/" class="btn btn-info">Voltar</a>
+            <a href="/form" class="btn btn-success">Voltar</a>
+            
         </div>
 
 
         <div class="col-8 m-auto pt-4 pb-2 text-center">
 
-            <form name="form" id="form" action="/create/" method="post">
+            <form name="form" id="form" action="{%if db%}/update/{{db.id}}/{%else%}/create/"{% endif%}" method="post">
                 {% csrf_token %}
-                <div class="form-grupo mt-4">Segmentos: {{form.segmentos}}</div>
-                <div class="form-grupo mt-4">Marcas: {{form.marcas}}</div>
-                <div class="form-grupo mt-4">Produtos: {{form.produtos}}</div>
-                <input type="submit" class="submit-btn btn-success" value="Salvar">
-            </form>    
+                <!--{{form.as_p}}-->
+                <div class="form-grupo mt-4">Segmento: {{form.nome}}</div>                         
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </form>  
+        </div>  
 
-        </div>
+        
 </body>
 
 </html>

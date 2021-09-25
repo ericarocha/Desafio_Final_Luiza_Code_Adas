@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Empresas</title>
+</head>
+<body>
+</div>
+
+<div class='col-8 m-auto pt-2 pb-2 text-center'>
+    <h1>Cadastro Empresas</h1>
+</div>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/" class="btn btn-info">Voltar</a>
+</div>
+
+
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+
+    <form name="cd_empresa" id="cd_empresa"  method="post" action="/create2/" >
+        {% csrf_token %}
+        <div class="form-grupo mt-4">Segmento: {{cdempresa.id_segmento}}</div>
+        <div class="form-grupo mt-4">Empresa {{ cdempresa.nome }}</div>
+        <div class="form-grupo mt-4">cnpj: {{ cdempresa.cnpj }}</div>
+        
+            <input type="submit" class="submit-btn btn-sucess" value="Salvar">
+    </form>    
+
+</div>
+
+</body>
+
+</html>
+
+</body>
+</html>

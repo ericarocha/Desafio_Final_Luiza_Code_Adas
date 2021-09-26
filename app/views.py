@@ -46,21 +46,48 @@ def createprod(request):
         cd_produto.save()
     return HttpResponseRedirect ("/")
 
-def view(request, pk):
-  data = {}
-  data['db'] = Segmentos.objects.get(pk=pk) 
-  return render(request, 'view.html', data)
+def viewseg (request, pk):
+    dataseg = {'db': Segmentos.object.get(pk=pk)}
+    return render (request, 'viewseg.html', dataseg)
 
-def edit(request, pk):
+def editseg(request, pk):
+    dataseg = {}
+    dataseg['db'] = Segmentos.objects.get(pk=pk)
+    dataseg['form'] = SegmentosForm(instance=dataseg['db'])
+    return render(request, 'form.html', dataseg)
+
+def editemp(request, pk):
+    dataemp = {}
+    dataemp['db'] = Empresas.objects.get(pk=pk)
+    dataemp['cdempresa'] = EmpresasForm(instance=dataemp['db'])
+    return render(request, 'cd_empresa.html', dataemp)
+
+def editprod(request, pk):
+    dataprod = {}
+    dataprod['db'] = Produtos.objects.get(pk=pk)
+    dataprod['cdproduto'] = ProdutosForm(instance=dataprod['db'])
+    return render(request, 'cd_produto.html', dataprod)
+
+def updateseg(request, pk):
     data = {}
     data['db'] = Segmentos.objects.get(pk=pk)
-    data['form'] = SegmentosForm(instance=data['db'])
-    return redirect(request, 'view.html', data)
-
-def update(request, pk):
-    data = {}
-    data['db'] = Segmentos.objects.get(pk=pk)
-    form = SegmentosForm(request.POST or None, instace=data['db'])
+    form = SegmentosForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return HttpResponseRedirect ("/")
+
+def updateemp(request, pk):
+    dataemp = {}
+    dataemp['db'] = Empresas.objects.get(pk=pk)
+    cd_empresa = EmpresasForm(request.POST or None, instance=dataemp['db'])
+    if cd_empresa.is_valid():
+        cd_empresa.save()
+        return HttpResponseRedirect ("/")
+
+def updateprod(request, pk):
+    dataprod = {}
+    dataprod['db'] = Produtos.objects.get(pk=pk)
+    cd_produto = ProdutosForm(request.POST or None, instance=dataprod['db'])
+    if cd_produto.is_valid():
+        cd_produto.save()
+        return HttpResponseRedirect ("/")

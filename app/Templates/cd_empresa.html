@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Empresas</title>
+        <title>Cadastro Empresas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
@@ -21,14 +20,13 @@
 
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-
-    <form name="cd_empresa" id="cd_empresa"  method="post" action="/create2/" >
+    <form name="form" id="form" method="post" action="{% if db %}/updateemp/{{ db.id }}/{% else %}/create2/{% endif %}">
         {% csrf_token %}
+        <!--{{form.as_p}}-->
         <div class="form-grupo mt-4">Segmento: {{cdempresa.id_segmento}}</div>
-        <div class="form-grupo mt-4">Empresa {{cdempresa.nome }}</div>
-        <div class="form-grupo mt-4">cnpj: {{cdempresa.cnpj }}</div>
-        
-            <input type="submit" class="submit-btn btn-success" value="Salvar">
+        <div class="form-grupo mt-4">Empresa: {{cdempresa.nome}}</div>
+        <div class="form-grupo mt-4">Cnpj: {{cdempresa.cnpj}}</div>
+        <input type="submit" class="btn btn-success" value="Salvar">
     </form>    
 
 </div>

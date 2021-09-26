@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalhes</title>
+    </head>
+    <body>
+
+            <div class="col-8 m-auto pt-4 pb-2 text-center">
+                <strong>Produto</strong>: </strong>{{db.nome}}<br>
+            </div>
+            <br>
+            <div class="col-8 m-auto pt-4 pb-2 text-center">
+                <strong>Empresa</strong>: </strong>{{ db.id_empresa }}<br>
+                <strong>Descrição: </strong>{{ db.descricao }}<br>
+                <strong>Voltagem</strong>: </strong>{{ db.id_voltagem }}<br>
+                <strong>Tamanho: </strong>{{ db.tamanho }}<br>
+                <strong>Preço</strong>: </strong>{{ db.preço }}<br>
+                <strong>Quantidade: </strong>{{ db.quantidade }}<br>
+            </div>
+            
+            <br>
+
+            <div class="col-8 m-auto pt-3 pb-2 text-center">
+                <a href="/" class="btn btn-info">Voltar</a>
+            </div>
+
+        </body>
+        </html>
+    </body>
+</html>

@@ -7,118 +7,119 @@
     <title>Adas Marketplace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
-<body>
+<body style="margin:20%;padding: 10px;">
 
+    <nav class="navbar navbar fixed-top navbar-light" style="background-color: #cff4fc;">
+        <span class="navbar-brand mb-20 h1">Adas Marketplace</span>
+    </nav>
 
-    <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="/form" class="btn btn-success">Adicionar</a>
-    </div>  
-
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
+    <div class="col-16 m-auto pt-3 pb-2 text-center">
         <form action="" method="GET">
     </div>
 
-    <div class="col-8 m-auto pt pb-2 text-center">
+    <div class="col-16 m-auto pt pb-2 text-center">
         <h1>Segmentos</h1>
     <table class="table">
         <thead class="table-info">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Segmento</th>
-            <th scope="col">Ações</th>
+            <th scope="col d-flex justify-content-between">ID</th>
+            <th scope="col d-flex justify-content-between">Segmento</th>
+            <th scope="col d-flex justify-content-between">Ações</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody scope="d-flex justify-content-between">
         {% for dbs in db %}
         
-        <tr>
-            <th >{{dbs.id}}</th>
+        <tr scope="d-flex justify-content-between">
+            <th>{{dbs.id}}</th>
             <td>{{dbs.nome}}</td>
             <td>
             <a href="/viewseg/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
             <a href="/editseg/{{dbs.id}}" class="btn btn-primary">Editar</a>
-            <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+            <a href="/deletarSeg/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
             </td>
-        
-    </tr>
-    {% endfor %}
+                
+        </tr>
+        {% endfor %}
         </tbody>
 
     </table>
 
-    <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="/cd_empresa" class="btn btn-success">Adicionar</a>
-    </div>  
+    <div class='col-16 m-auto pt-3 pb-2 text-center'>
+        <a href="/form" class="btn btn-success">Adicionar</a>
+    </div>   
+    <br>
+    <br>
+    <div class="col-16 m-auto pt pb-2 text-center">
+        <table class="table">
 
-    <div class="col-8 m-auto pt pb-2 text-center">
-    <table class="table">
+            <h1>Empresas</h1>
+            <thead class="table-warning">
+            <tr>
+                <th scope="col d-flex justify-content-between">ID</th>
+                <th scope="col d-flex justify-content-between">Segmento</th>
+                <th scope="col d-flex justify-content-between">Empresa</th>
+                <th scope="col d-flex justify-content-between">CNPJ</th>
+                <th scope="col d-flex justify-content-between">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dbs in dbe %}
+            <tr>
+                <th>{{dbs.id}}</th>
+                <td>{{dbs.id_segmento}}</td>
+                <td>{{dbs.nome}}</td>
+                <td>{{dbs.cnpj}}</td>
+                <td>
+                    <a href="/viewEmpresas/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
+                    <a href="/editemp/{{dbs.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/deletarEmpresa/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+            {% endfor%}
+            </tr>
+            </tbody>
+        </table>
 
-        <h1>Empresas</h1>
-        <thead class="table-warning">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Segmento</th>
-            <th scope="col">Empresa</th>
-            <th scope="col">CNPJ</th>
-            <th scope="col">Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for dbs in dbe %}
-            
-        <tr>
-            <th>{{dbs.id}}</th>
-            <td>{{dbs.id_segmento}}</td>
-            <td>{{dbs.nome}}</td>
-            <td>{{dbs.cnpj}}</td>
-            <td><a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-                <a href="/editemp/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
-        </tr>
-        {% endfor%}
-        
-        
-        </tr>
-        </tbody>
-    </table>
-    <div class='col-8 m-auto pt-3 pb-2 text-center'>
-        <a href="/cd_produto" class="btn btn-success">Adicionar</a>
-    </div>  
+        <div class='col-16 m-auto pt-3 pb-2 text-center'>
+            <a href="/cd_empresa" class="btn btn-success">Adicionar</a>
+        </div>
+        <br>
+        <br>
 
-    <div class="col-8 m-auto pt-4 pb-2 text-center"></div>
-    <table class="table">
-        <h1>Produtos</h1>
-        <thead class="table-danger">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Empresa </th>
-            <th scope="col">Produto </th>
-            <th scope="col">Voltagem </th>
-            <th scope="col">Tamanho </th>
-            <th scope="col">Preço </th>
-            <th scope="col">Quantidade </th>
-            <th scope="col">Ações </th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for dbs in dbp %}
-
-        <tr>
-            <th>{{dbs.id}}</th>
-            <td>{{dbs.id_empresa}}</td>
-            <td>{{dbs.nome}}</td>
-            <td>{{dbs.id_voltagem}}</td>
-            <td>{{dbs.tamanho}}</td>
-            <td>{{dbs.preço}}</td>
-            <td>{{dbs.quantidade}}</td>
-            <td><a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-                <a href="/editprod/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
-        </tr>
-        {% endfor %}      
-
-        </tbody>
-    </table>
+        <table class="table">
+            <h1>Produtos</h1>
+            <thead class="table-danger">
+            <tr>
+                <th scope="col d-flex justify-content-between">ID</th>
+                <th scope="col d-flex justify-content-between">Empresa </th>
+                <th scope="col d-flex justify-content-between">Produto </th>
+                <th scope="col d-flex justify-content-between">Voltagem </th>
+                <th scope="col d-flex justify-content-between">Tamanho </th>
+                <th scope="col d-flex justify-content-between">Preço </th>
+                <th scope="col d-flex justify-content-between">Quantidade </th>
+                <th scope="col d-flex justify-content-between">Ações </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dbs in dbp %}
+            <tr>
+                <th>{{dbs.id}}</th>
+                <td>{{dbs.id_empresa}}</td>
+                <td>{{dbs.nome}}</td>
+                <td>{{dbs.id_voltagem}}</td>
+                <td>{{dbs.tamanho}}</td>
+                <td>{{dbs.preço}}</td>
+                <td>{{dbs.quantidade}}</td>
+                <td><a href="/viewProd/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
+                    <a href="/editprod/{{dbs.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/deletarProduto/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
+            </tr>
+            {% endfor %}      
+            </tbody>
+        <div class='col-16 m-auto pt-3 pb-2 text-center'>
+            <a href="/cd_produto" class="btn btn-success">Adicionar</a>
+        </div>
     </div>
 </body>
 </html>

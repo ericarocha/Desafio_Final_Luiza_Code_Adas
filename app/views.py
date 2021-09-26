@@ -46,8 +46,16 @@ def createprod(request):
         cd_produto.save()
     return HttpResponseRedirect ("/")
 
+def viewProd(request, pk):
+    data = {'db': Produtos.objects.get(pk=pk) }
+    return render(request, 'viewProdutos.html', data)
+
+def viewEmpresas(request, pk):
+    dataEmpresa = {'db': Empresas.objects.get(pk=pk) }
+    return render(request, 'viewEmpresas.html', dataEmpresa)
+
 def viewseg (request, pk):
-    dataseg = {'db': Segmentos.object.get(pk=pk)}
+    dataseg = {'db': Segmentos.objects.get(pk=pk) }
     return render (request, 'viewseg.html', dataseg)
 
 def editseg(request, pk):
@@ -74,15 +82,15 @@ def updateseg(request, pk):
     form = SegmentosForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect ("/")
-
+    return HttpResponseRedirect ("/")
+    
 def updateemp(request, pk):
     dataemp = {}
     dataemp['db'] = Empresas.objects.get(pk=pk)
     cd_empresa = EmpresasForm(request.POST or None, instance=dataemp['db'])
     if cd_empresa.is_valid():
         cd_empresa.save()
-        return HttpResponseRedirect ("/")
+    return HttpResponseRedirect ("/")
 
 def updateprod(request, pk):
     dataprod = {}
@@ -91,3 +99,21 @@ def updateprod(request, pk):
     if cd_produto.is_valid():
         cd_produto.save()
         return HttpResponseRedirect ("/")
+
+    
+def deletarEmpresa(request, pk):
+    db = Empresas.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")
+
+
+def deletarProduto(request, pk):
+    db = Produtos.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")
+
+def deletarSeg(request, pk):
+    db = Segmentos.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")
+

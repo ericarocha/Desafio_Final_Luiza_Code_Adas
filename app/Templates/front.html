@@ -34,13 +34,13 @@
             <th>{{dbs.id}}</th>
             <td>{{dbs.nome}}</td>
             <td>
-            <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-            <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
+            <a href="/viewseg/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
+            <a href="/editseg/{{dbs.id}}" class="btn btn-primary">Editar</a>
             <a href="/deletarSeg/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
             </td>
-            
-    </tr>
-    {% endfor %}
+                
+        </tr>
+        {% endfor %}
         </tbody>
 
     </table>
@@ -72,24 +72,21 @@
                 <td>{{dbs.cnpj}}</td>
                 <td>
                     <a href="/viewEmpresas/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-                    <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/editemp/{{dbs.id}}" class="btn btn-primary">Editar</a>
                     <a href="/deletarEmpresa/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
                 </td>
             </tr>
             {% endfor%}
-            
-            
             </tr>
             </tbody>
         </table>
 
         <div class='col-16 m-auto pt-3 pb-2 text-center'>
             <a href="/cd_empresa" class="btn btn-success">Adicionar</a>
-        </div>  
+        </div>
         <br>
         <br>
-        <div class="col-16 m-auto pt-4 pb-2 text-center"></div>
-        
+
         <table class="table">
             <h1>Produtos</h1>
             <thead class="table-danger">
@@ -106,7 +103,6 @@
             </thead>
             <tbody>
             {% for dbs in dbp %}
-
             <tr>
                 <th>{{dbs.id}}</th>
                 <td>{{dbs.id_empresa}}</td>
@@ -116,14 +112,11 @@
                 <td>{{dbs.preço}}</td>
                 <td>{{dbs.quantidade}}</td>
                 <td><a href="/viewProd/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-                    <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/editprod/{{dbs.id}}" class="btn btn-primary">Editar</a>
                     <a href="/deletarProduto/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
             </tr>
             {% endfor %}      
-
             </tbody>
-        </table>
-
         <div class='col-16 m-auto pt-3 pb-2 text-center'>
             <a href="/cd_produto" class="btn btn-success">Adicionar</a>
         </div>

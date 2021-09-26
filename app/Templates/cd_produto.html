@@ -19,19 +19,18 @@
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
 
-        <form name="cd_produto" id="cd_produto"  method="post" action="/createprod/" >
+
+        <form name="form" id="form" method="post" action="{% if db %}/updateprod/{{ db.id }}/{% else %}/createprod/{% endif %}">
             {% csrf_token %}
-            <div class="form-grupo mt-4">Empresa: {{ cdproduto.id_empresa }}</div>
-            <div class="form-grupo mt-4">Produto: {{ cdproduto.nome }}</div>
-            <div class="form-grupo mt-4">Descrição: {{ cdproduto.descricao }}</div>
-            <div class="form-grupo mt-4">Voltagem: {{ cdproduto.id_voltagem }}</div>
-            <div class="form-grupo mt-4">Tamanho: {{ cdproduto.tamanho }}</div>
-            <div class="form-grupo mt-4">Preço: {{ cdproduto.preço }}</div>
-            <div class="form-grupo mt-4">Quantidade: {{ cdproduto.quantidade }}</div>
-           <!-- <div class="form-grupo mt-4">Imagem: {{ cdproduto.imagem }}</div>-->
-        
-            
-                <input type="submit" class="submit-btn btn-success" value="Salvar">
+            <!--{{form.as_p}}-->
+            <div class="form-grupo mt-4">Empresa: {{cdproduto.id_empresa}}</div>
+            <div class="form-grupo mt-4">Produto: {{cdproduto.nome}}</div>
+            <div class="form-grupo mt-4">Descrição: {{cdproduto.descricao}}</div>
+            <div class="form-grupo mt-4">Voltagem: {{cdproduto.id_voltagem}}</div>
+            <div class="form-grupo mt-4">Tamanho: {{cdproduto.tamanho}}</div>
+            <div class="form-grupo mt-4">Preço: {{cdproduto.preço}}</div>
+            <div class="form-grupo mt-4">Quantidade: {{cdproduto.quantidade}}</div>
+            <input type="submit" class="btn btn-success" value="Salvar">
         </form>    
     </div>
 </body>

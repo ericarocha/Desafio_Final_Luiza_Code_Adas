@@ -14,6 +14,7 @@ class Empresas (models.Model):
     id_segmento = models.ForeignKey(Segmentos, on_delete=models.CASCADE)
     nome = models.CharField(max_length=150)
     cnpj = models.IntegerField()
+    
     def __str__(self):
         return str(self.nome)
 

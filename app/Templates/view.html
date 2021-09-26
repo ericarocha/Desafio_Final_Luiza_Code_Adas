@@ -9,31 +9,19 @@
 <body>
 
         <div class='col-8 m-auto pt-3 pb-2 text-center'>
-            <h1>Visualização</h1>
+            <h1>Detalhes</h1>
         </div>
 
        
         <div class="col-8 m-auto pt-4 pb-2 text-center">
-         <strong>segmento: </strong>{{form.nome}}<br>
+         <strong>Segmento: </strong>{{db.nome}}<br>
         </div>
 
         <div class="col-8 m-auto pt-3 pb-2 text-center">
             <a href="/" class="btn btn-info">Voltar</a>
         </div>
 
-
-        <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <strong>Segmento: </strong>{{ db.segmento }}<br>
-            <strong>Descrição: </strong>{{ db.descrição }}<br>
-            <strong>Ações: </strong>{{ db.Ações}}<br>
-        </div>
-         
 </body>
 </html>
 
-{% for dbs in db %}
 
-{% endfor %}
-
-def __unicode__(self):
-        return str(self.id)

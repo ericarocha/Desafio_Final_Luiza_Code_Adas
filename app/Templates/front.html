@@ -37,7 +37,7 @@
             <td>
             <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
             <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-            <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+            <a href="/deletarSeg/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
             </td>
         
     </tr>
@@ -65,15 +65,16 @@
         </thead>
         <tbody>
         {% for dbs in dbe %}
-            
         <tr>
             <th>{{dbs.id}}</th>
             <td>{{dbs.id_segmento}}</td>
             <td>{{dbs.nome}}</td>
             <td>{{dbs.cnpj}}</td>
-            <td><a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
+            <td>
+                <a href="/viewEmpresas/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                 <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
+                <a href="/deletarEmpresa/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+            </td>
         </tr>
         {% endfor%}
         
@@ -111,9 +112,9 @@
             <td>{{dbs.tamanho}}</td>
             <td>{{dbs.preço}}</td>
             <td>{{dbs.quantidade}}</td>
-            <td><a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
+            <td><a href="/viewProd/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                 <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
+                <a href="/deletarProduto/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a></td>
         </tr>
         {% endfor %}      
 

@@ -47,9 +47,17 @@ def createprod(request):
     return HttpResponseRedirect ("/")
 
 def view(request, pk):
-  data = {}
-  data['db'] = Segmentos.objects.get(pk=pk) 
-  return render(request, 'view.html', data)
+    dataSeg = {}
+    dataSeg['db'] = Segmentos.objects.get(pk=pk) 
+    return render(request, 'view.html', dataSeg)
+
+def viewProd(request, pk):
+    data = {'db': Produtos.objects.get(pk=pk) }
+    return render(request, 'viewProdutos.html', data)
+
+def viewEmpresas(request, pk):
+    dataEmpresa = {'db': Empresas.objects.get(pk=pk) }
+    return render(request, 'viewEmpresas.html', dataEmpresa)
 
 def edit(request, pk):
     data = {}
@@ -64,3 +72,19 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect('home')
+    
+def deletarEmpresa(request, pk):
+    db = Empresas.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")
+
+
+def deletarProduto(request, pk):
+    db = Produtos.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")
+
+def deletarSeg(request, pk):
+    db = Segmentos.objects.get(pk=pk)
+    db.delete()
+    return HttpResponseRedirect("/")

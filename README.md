@@ -91,7 +91,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
 
 > Criar o form e importá-lo
 
-> Começar agr nas models                  ***ver o que é agr***
+> Começar nas models                 
 
 > Procurar no google models django
 

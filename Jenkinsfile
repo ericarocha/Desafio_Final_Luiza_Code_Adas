@@ -17,8 +17,6 @@ pipeline {
 
         stage('Test') {
             steps {
-                git credentialsId: '4afadf64-547f-4a5a-ad13-1ee718153e0d', 
-url: 'https://github.com/ericarocha/Desafio_Final_Luiza_Code_Adas.git'
                 echo 'The job finish'
             }
         }

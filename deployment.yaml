@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: time-adas
+spec:
+  selector:
+    matchLabels:
+      app: time-adas
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: time-adas
+    spec:
+      containers:
+        - name: time-adas
+          image: ericarocha/time-adas
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000

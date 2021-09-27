@@ -1,7 +1,7 @@
 # Dockerfile
 
 
-FROM python:3.8.3-alpine
+FROM python:3.9.7-alpine
 
 WORKDIR /Desafio_Final_Luiza_Code_Adas
 

@@ -55,7 +55,7 @@ ROOT_URLCONF = 'adas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\erica\Documents\LuizaCode\Projeto_Concluido_Adas\Desafio_Final_Luiza_Code_Adas\app\Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

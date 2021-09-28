@@ -30,7 +30,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
 #### ENDPOINTS
 
 
-  *GET*
+  **GET**
 
     -[GET] "/"
     home que retorna a pagina inicial;
@@ -48,7 +48,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
     Para visualizar determinada empresa;
     HTTP 200 OK
 
-  *POST*
+  **POST**
 
     [POST] "/cdSegmento"
     cdSegmento cria um novo cadastro de segmentos.
@@ -62,7 +62,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
     cd_produto cria um novo cadastro de produtos.
     HTTP 201 CREATED
 
-*UPDATE*
+**UPDATE**
 
     [Update] "editseg/:id"
     Edita um segmento.
@@ -76,7 +76,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
     Edita um produto.
     HTTP 200 OK
 
-  *DELETE*
+  **DELETE**
 
     [Delete] "/deletarEmpresa/:id"
     deletarEmpresa deleta uma empresa.
@@ -108,7 +108,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
 > Crie um fork desse projeto e para isso siga o [tutorial de como realizar um fork](https://docs.github.com/pt/github/getting-started-with-github/quickstart/fork-a-repo);
 > Após feito o fork, clone o [repositório](https://github.com/ericarocha/Desafio_Final_Luiza_Code_Adas.git) em seu computador.
 
-### 2 - **Clonar o repositório github**
+### 2 - ***Clonar o repositório github***
 O comando abaixo irá clonar o projeto do Git para dentro do diretório informado. 
 
     git clone https://github.com/ericarocha/Desafio_Final_Luiza_Code_Adas
@@ -116,12 +116,12 @@ O comando abaixo irá clonar o projeto do Git para dentro do diretório informad
  
  ## Rodar o servidor sem o docker
 
- - *Python*  instalado ([Link](https://www.python.org/downloads/));
-- *PIP* instalado, é um gerenciador de pacotes do Python.
+ - **Python**  instalado ([Link](https://www.python.org/downloads/));
+- **PIP** instalado, é um gerenciador de pacotes do Python.
 
     Instalar via [Link](https://pypi.org/project/pip/) ou Comandos: 
 
-    bash
+    ```bash
     curl -O https://bootstrap.pypa.io/pip/3.4/get-pip.py
 
     sudo -E python3 get-pip.py
@@ -129,38 +129,38 @@ O comando abaixo irá clonar o projeto do Git para dentro do diretório informad
     sudo pip install --upgrade pip
 
     python3 -m pip --version
-    
+    ```
 
-- Instalar *Django* ([Link](https://docs.djangoproject.com/pt-br/3.2/topics/install/#installing-official-release))
+- Instalar **Django** ([Link](https://docs.djangoproject.com/pt-br/3.2/topics/install/#installing-official-release))
 
     Assistam esse vídeo explicando o que é Django depois ([Link](https://www.youtube.com/watch?v=9SUVYuPK2f4&t=4s&ab_channel=CanalPythonProBr))
 
-- Instalar DB Browser para *SQLite* ([Link](https://sqlitebrowser.org/dl/)).
+- Instalar DB Browser para **SQLite** ([Link](https://sqlitebrowser.org/dl/)).
 
     Vamos usar para melhor visualização Banco de Dados Relacional.
 
-- Instalar *VSCode* ([Link](https://code.visualstudio.com/download))
-- Instalar o *Kubernetes* (kubectl) por favor ([Link](https://kubernetes.io/releases/download/))
-- Instalar o *Minikube* por favor ([Link](https://minikube.sigs.k8s.io/docs/start/)).
-- Opcional. Instalar o *Docker Desktop* ([Link](https://www.docker.com/products/docker-desktop))
+- Instalar **VSCode** ([Link](https://code.visualstudio.com/download))
+- Instalar o **Kubernetes** (kubectl) por favor ([Link](https://kubernetes.io/releases/download/))
+- Instalar o **Minikube** por favor ([Link](https://minikube.sigs.k8s.io/docs/start/)).
+- Opcional. Instalar o **Docker Desktop** ([Link](https://www.docker.com/products/docker-desktop))
 
 <br>
 
 
- ### 2 - **Instale a maquina virtual**
+ ### 2 - ***Instale a maquina virtual***
 Comando para windows:
 
     python3 -m pip install virtualenv  
 
 
-### 3 - **Inicie a maquina virtual**
+### 3 - ***Inicie a maquina virtual***
 
     Desafio_Final_Luiza_Code_Adas/projeto_final_adas/Scripts/activate
 
     
- ### 4  - **Inicialize a aplicação**
+ ### 4  - ***Inicialize a aplicação***
 
-> Entre no caminho que se localiza o arquivo **manage.py**
+> Entre no caminho que se localiza o arquivo ***manage.py***
 
 > Execute o camando para iniciar a aplicação: 
 
@@ -170,11 +170,11 @@ Comando para windows:
 
 ## Executar o servidor com o Docker
 
-### 1 - **Dê o comando abaixo para baixar a imagem**
+### 1 - ***Dê o comando abaixo para baixar a imagem***
 
     docker pull ericarocha/python-crud-adas:v1
 
-### 2 - **Comando para executar a imagem**
+### 2 - ***Comando para executar a imagem***
 
     docker run ericarocha/pyhton-crud-adas:v1
 

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-crud-adas
+spec:
+  selector:
+    matchLabels:
+      app: python-crud-adas
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: python-crud-adas
+    spec:
+      containers:
+        - name: api-python-crud-adas
+          image: ericarocha/python-crud-adas:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000

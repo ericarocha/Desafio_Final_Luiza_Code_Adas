@@ -16,9 +16,9 @@ def home(request):
     return render(request, 'front.html', data)
     
 
-def form(request):
+def cdSegmento(request):
     data = {'form': SegmentosForm()}
-    return render(request, 'form.html', data)
+    return render(request, 'cdSegmento.html', data)
 
 def cd_empresa(request):
     dataemp = {'cdempresa': EmpresasForm()}
@@ -62,7 +62,7 @@ def editseg(request, pk):
     dataseg = {}
     dataseg['db'] = Segmentos.objects.get(pk=pk)
     dataseg['form'] = SegmentosForm(instance=dataseg['db'])
-    return render(request, 'form.html', dataseg)
+    return render(request, 'cdSegmento.html', dataseg)
 
 def editemp(request, pk):
     dataemp = {}

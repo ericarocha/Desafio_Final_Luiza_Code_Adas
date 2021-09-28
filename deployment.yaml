@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: time-adas
+  name: python-crud-adas
 spec:
   selector:
     matchLabels:
-      app: time-adas
+      app: python-crud-adas
   replicas: 3
   template:
     metadata:
       labels:
-        app: time-adas
+        app: python-crud-adas
     spec:
       containers:
-        - name: time-adas
-          image: ericarocha/time-adas
+        - name: api-python-crud-adas
+          image: ericarocha/python-crud-adas:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000

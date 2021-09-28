@@ -37,7 +37,7 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
 
 ### Instruções para configurar o ambiente e rodar o projeto:
 
-### Antes de Começar:
+### Antes de Começar
 
 ### 1 - ***Crie um fork do projeto:***
 
@@ -45,41 +45,43 @@ O desafio foi desenvolvido pelas 4 mulheres do Time Adas sendo cada uma respons�
 > Após feito o fork, clone o [repositório](https://github.com/ericarocha/Desafio_Final_Luiza_Code_Adas.git) em seu computador.
  
  ### 2 - ***Ative a máquina virtual do projeto***
-     Comando para windows    
-`Desafio_Final_Luiza_Code_Adas/projeto_final_adas/Scripts/activate`
+Comando para windows
+
+    Desafio_Final_Luiza_Code_Adas/projeto_final_adas/Scripts/activate
     
- ### 3 - ***Inicialize a aplicação***
+ ### Inicialize a aplicação
 
 > Abra a pasta clonada do projeto através de sua IDE. 
 
 > Execute o camando para iniciar a aplicação: 
 
-`python.manage.py.runserver`
+    python.manage.py.runserver
 
-### 3 - ***Acessando a aplicação***
+### 1 - ***Acessando a aplicação***
 
 >No navegador acesse:
-http://127.0.0.1:8000/
 
- ### 4 -  ***Build no Jenkins*** ###
+    http://127.0.0.1:8000/
+
+ ### 2 -  ***Build no Jenkins***
 
 Instale o Jenkins - [Manual](https://www.jenkins.io/doc/book/installing/) 
    
    ###### Obs: Nós iniciamos o Jeakins pelo Docker por meio do comando ######
 
-`docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11` 
+    docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11 
 
    > Inicialize o Jenkins
 
    > Crie uma pipeline referenciando o projeto [Desafio_Final_Luiza_Code_Adas](https://github.com/ericarocha/Desafio_Final_Luiza_Code_Adas.git).  
    O Jeankins irá acessar o arquivo Jenkinsfile e criar a Pipeline. 
 
-  ### 5 -  ***Deploy usando Kubernetes*** ###
+  ### 3 -  ***Deploy usando Kubernetes*** 
 
   Execute os comandos:
 
-`minikube start` 
+    minikube start 
 
-`kubectl apply -f deployment.yaml`
+    kubectl apply -f deployment.yaml
 
-`minukube dashboard`
+    minukube dashboard
